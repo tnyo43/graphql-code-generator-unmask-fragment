@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
     "typescript": "^5.3.3"
   }
 }
