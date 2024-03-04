@@ -1,0 +1,73 @@
+scalar Url
+scalar Date
+
+type Post {
+  id: ID!
+  body: String!
+  date: Date
+  author: User!
+  Stats: Stat
+}
+
+type User {
+  id: ID!
+  username: String
+  first_name: String
+  last_name: String
+  full_name: String
+  name: String @deprecated
+  avatar_url: Url
+  Followers: [User!]!
+  Posts: [Post!]!
+}
+
+type Stat {
+  views: Int
+  likes: Int
+  share: Int
+  responses: Int
+}
+
+interface Notification {
+  id: ID!
+  date: Date
+}
+
+type Message implements Notification {
+  id: ID!
+  date: Date
+  from: User!
+  to: User!
+  body: String!
+}
+
+type Information implements Notification {
+  id: ID!
+  date: Date
+  body: String!
+  priority: Int!
+}
+
+type Meta {
+  count: Int
+}
+
+type Query {
+  Post(id: ID!): Post
+  Posts(
+    limit: Int
+    skip: Int
+    sort_field: String
+    sort_order: String
+  ): [Post!]
+  PostsMeta: Meta
+  User(id: ID!): User
+  notifications(limit: Int): [Notification]
+  notificationsMeta: Meta
+}
+
+type Mutation {
+  createPost(body: String): Post
+  deletePost(id: ID!): Post
+  markPostRead(id: ID!): Boolean
+}
