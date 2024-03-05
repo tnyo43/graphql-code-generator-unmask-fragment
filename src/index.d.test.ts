@@ -1,5 +1,5 @@
 import { Equal, Expect } from "../tests/utils";
-import { UnmaskFragment } from "./UnmaskFragment";
+import { UnmaskFragment } from ".";
 
 type UserAvatarUserFragment = {
   " $fragmentName"?: "UserAvatarUserFragment";

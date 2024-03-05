@@ -2,7 +2,9 @@
   "name": "graphql-code-generator-unmask-fragment",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "type": "commonjs",
+  "main": "./src/index.cjs",
+  "types": "./src/index.d.ts",
   "scripts": {
     "test": "tsc --noEmit",
     "example:generate": "graphql-codegen --config example/codegen.ts"

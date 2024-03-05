@@ -1,3 +1,5 @@
+import { type DocumentTypeDecoration } from "@graphql-typed-document-node/core";
+
 type Primitive = string | number | boolean | bigint | symbol | null | undefined;
 type ExcludePrimitive<T> = Exclude<T, Primitive>;
 type ExtractPrimitive<T> = Extract<T, Primitive>;
@@ -46,3 +48,17 @@ type Flatten<F> =
       : object);
 
 export type UnmaskFragment<F> = UnionFieldToIntersection<Flatten<F>>;
+
+// copied from gql/fragment-masking.ts
+type FragmentType<TDocumentType extends DocumentTypeDecoration<any, any>> =
+  TDocumentType extends DocumentTypeDecoration<infer TType, any>
+    ? [TType] extends [{ " $fragmentName"?: infer TKey }]
+      ? TKey extends string
+        ? { " $fragmentRefs"?: { [key in TKey]: TType } }
+        : never
+      : never
+    : never;
+
+export declare function makeFragmentData<
+  F extends DocumentTypeDecoration<any, any>
+>(data: UnmaskFragment<FragmentType<F>>, _fragment: F): FragmentType<F>;
