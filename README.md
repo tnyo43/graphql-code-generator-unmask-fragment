@@ -10,7 +10,7 @@ Install this package by setting the path on your package.json and running `$ npm
 ```json
 {
   "dependencies": {
-    "graphql-code-generator-unmask-fragment": "git+https://github.com/tnyo43/graphql-code-generator-unmask-fragment"
+    "graphql-code-generator-unmask-fragment": "git+https://github.com/tnyo43/graphql-code-generator-unmask-fragment#v1.1"
   }
 }
 ```
