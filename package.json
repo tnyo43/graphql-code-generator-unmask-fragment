@@ -1,7 +1,16 @@
 {
   "name": "graphql-code-generator-unmask-fragment",
   "version": "1.1.1",
-  "description": "",
+  "description": "This package provide a helper function and a utility type for graphql-code-generator in client-preset use cases.",
+  "keywords": [
+    "graphql",
+    "gql",
+    "typescript",
+    "d.ts"
+  ],
+  "repository": "github:tnyo43/graphql-code-generator-unmask-fragment",
+  "homepage": "https://github.com/tnyo43/graphql-code-generator-unmask-fragment#readme",
+  "bugs": "https://github.com/tnyo43/graphql-code-generator-unmask-fragment/issues",
   "type": "commonjs",
   "main": "./src/index.cjs",
   "types": "./src/index.d.ts",
@@ -9,8 +18,7 @@
     "test": "tsc --noEmit",
     "example:generate": "graphql-codegen --config example/codegen.ts"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Tomoya Kashifuku<tnyo43@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
