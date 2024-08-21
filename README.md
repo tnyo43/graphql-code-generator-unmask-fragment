@@ -3,18 +3,6 @@
 This package provide a helper function and a utility type for [graphql-code-generator](https://github.com/dotansimha/graphql-code-generator) in client-preset use cases.
 The function resolves [a problem with nested fragment](https://github.com/dotansimha/graphql-code-generator/issues/9702).
 
-## Usage
-
-Install this package by setting the path on your package.json and running `$ npm install`.
-
-```json
-{
-  "dependencies": {
-    "graphql-code-generator-unmask-fragment": "tnyo43/graphql-code-generator-unmask-fragment#v1.1.1",
-  }
-}
-```
-
 ### `UnmaskFragment`
 
 `UnmaskFragment` utility type helps you to obtain a unmasked fragment type from its masked fragment type.
