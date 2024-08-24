@@ -8,14 +8,14 @@ The function resolves [a problem with nested fragment](https://github.com/dotans
 `UnmaskFragment` utility type helps you to obtain a unmasked fragment type from its masked fragment type.
 
 ```ts
-const UserFragment = graphql(`
+const userFragment = graphql(`
   fragment UserFragment on User {
     id
     username
   }
 `);
 
-const PostWithUserFragment = graphql(`
+const postWithUserFragment = graphql(`
   fragment PostWithUserFragment on Post {
     id
     body
@@ -25,7 +25,8 @@ const PostWithUserFragment = graphql(`
   }
 `);
 
-type User = UnmaskFragment<typeof UserFragment>;
+type UserFragment = FragmentType<typeof userFragment>;
+type User = UnmaskFragment<UserFragment>;
 /*
 type User = {
   __typename?: "User" | undefined;
@@ -33,7 +34,9 @@ type User = {
   username?: string | null | undefined;
 }
 */
-type PostWithUser = UnmaskFragment<typeof PostWithUserFragment>;
+
+type PostWithUserFragment = FragmentType<typeof postWithUserFragment>;
+type PostWithUser = UnmaskFragment<PostWithUserFragment>;
 /*
 type PostWithUser = {
   __typename?: "Post" | undefined;
