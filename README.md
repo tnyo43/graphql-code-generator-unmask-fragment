@@ -3,6 +3,9 @@
 This package provide a helper function and a utility type for [graphql-code-generator](https://github.com/dotansimha/graphql-code-generator) in client-preset use cases.
 The function resolves [a problem with nested fragment](https://github.com/dotansimha/graphql-code-generator/issues/9702).
 
+> [!NOTE]
+> When using `@graphql-codegen/client-preset` v6 or later, you need to specify `nonOptionalTypename: true` in your codegen config so that the `__typename` field is generated. This package relies on `__typename` to resolve fragment types.
+
 ### `UnmaskFragment`
 
 `UnmaskFragment` utility type helps you to obtain a unmasked fragment type from its masked fragment type.
